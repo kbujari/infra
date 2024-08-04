@@ -6,3 +6,4 @@ resources:
   - ./flux.yaml
   - ./cluster.yaml
   - ./apps.yaml
+  - ./repos/helm/node-feature-discovery.yaml
