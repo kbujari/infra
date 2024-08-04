@@ -29,6 +29,8 @@ spec:
             - name: media
               mountPath: /mnt/media
               readOnly: true
+      nodeSelector:
+        intel.feature.node.kubernetes.io/gpu: "true"
       volumes:
         - name: media
           nfs:
