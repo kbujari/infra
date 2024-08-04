@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: &app redlib
+  name: jellyfin
 spec:
   selector:
-    app: *app
+    app: jellyfin
   ports:
     - protocol: TCP
-      port: 8080
+      port: 8096
