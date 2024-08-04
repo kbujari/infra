@@ -17,4 +17,4 @@ spec:
   retryInterval: 2m
   targetNamespace: flux-system
   timeout: 5m
-  wait: true
+  wait: false
