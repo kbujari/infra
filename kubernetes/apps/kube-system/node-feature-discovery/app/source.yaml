@@ -6,4 +6,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 2h
-  url: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+  url: https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/gh-pages/charts
