@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: netcluster
+  namespace: flux-system
+spec:
+  url: https://github.com/kbujari/infra.git
+  interval: 30m
+  ref:
+    branch: master
+  ignore: |
+    /*
+    !/kubernetes
