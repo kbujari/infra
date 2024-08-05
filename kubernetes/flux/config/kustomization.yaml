@@ -7,3 +7,4 @@ resources:
   - ./cluster.yaml
   - ./apps.yaml
   - ./repos/helm/node-feature-discovery.yaml
+  - ./repos/oci/capacitor.yaml
