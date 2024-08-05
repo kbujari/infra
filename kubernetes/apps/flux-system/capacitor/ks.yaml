@@ -15,3 +15,4 @@ spec:
   sourceRef:
     kind: OCIRepository
     name: capacitor
+    namespace: flux-system
