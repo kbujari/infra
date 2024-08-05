@@ -23,6 +23,8 @@ spec:
       retries: 3
   values:
     controller:
+      service:
+        type: ClusterIP
       ingressClassResource:
         default: true
       config:
