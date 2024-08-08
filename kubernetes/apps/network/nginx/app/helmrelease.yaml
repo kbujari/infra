@@ -24,7 +24,8 @@ spec:
   values:
     controller:
       service:
-        type: ClusterIP
+        annotations:
+          metallb.universe.tf/address-pool: clearnet
       ingressClassResource:
         default: true
       config:
