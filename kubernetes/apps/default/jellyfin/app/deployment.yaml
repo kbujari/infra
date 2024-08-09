@@ -1,6 +1,17 @@
 ---
-kind: Deployment
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jellyfin-config
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi
+---
 apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: &app jellyfin
 spec:
@@ -26,12 +37,17 @@ spec:
             - name: TZ
               value: "America/Toronto"
           volumeMounts:
+            - name: config
+              mountPath: /config
             - name: media
               mountPath: /mnt/media
               readOnly: true
       nodeSelector:
         intel.feature.node.kubernetes.io/gpu: "true"
       volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: jellyfin-config
         - name: media
           nfs:
             server: 192.168.2.113
