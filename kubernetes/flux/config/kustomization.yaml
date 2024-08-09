@@ -6,7 +6,8 @@ resources:
   - ./flux.yaml
   - ./cluster.yaml
   - ./apps.yaml
-  - ./repos/helm/node-feature-discovery.yaml
-  - ./repos/helm/nginx-ingress.yaml
   - ./repos/helm/longhorn.yaml
+  - ./repos/helm/metallb.yaml
+  - ./repos/helm/nginx-ingress.yaml
+  - ./repos/helm/node-feature-discovery.yaml
   - ./repos/oci/capacitor.yaml
