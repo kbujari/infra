@@ -23,4 +23,4 @@ spec:
       retries: 3
   values:
     persistence:
-      defaultClassReplicaCount: 3
+      defaultClassReplicaCount: 1
