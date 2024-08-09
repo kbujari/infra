@@ -6,6 +6,9 @@ metadata:
   namespace: flux-system
 spec:
   targetNamespace: default
+  dependsOn:
+    - name: nginx
+    - name: longhorn
   sourceRef:
     kind: GitRepository
     name: netcluster
