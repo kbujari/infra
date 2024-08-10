@@ -43,23 +43,23 @@ spec:
       fsGroupChangePolicy: "OnRootMismatch"
     persistence:
       enabled: true
-    certResolvers:
-      letsencrypt:
-        dnsChallenge:
-          provider: porkbun
-        domain:
-          main: 4kb.net
-          sans:
-            - "*.4kb.net"
-        storage: /data/acme.json
-    env:
-      - name: PORKBUN_API_KEY
-        valueFrom:
-          secretKeyRef:
-            name: porkbun
-            key: api-key
-      - name: PORKBUN_SECRET_API_KEY
-        valueFrom:
-          secretKeyRef:
-            name: porkbun
-            key: secret-api-key
+    # certResolvers:
+    #   letsencrypt:
+    #     dnsChallenge:
+    #       provider: porkbun
+    #     domain:
+    #       main: 4kb.net
+    #       sans:
+    #         - "*.4kb.net"
+    #     storage: /data/acme.json
+    # env:
+    #   - name: PORKBUN_API_KEY
+    #     valueFrom:
+    #       secretKeyRef:
+    #         name: porkbun
+    #         key: api-key
+    #   - name: PORKBUN_SECRET_API_KEY
+    #     valueFrom:
+    #       secretKeyRef:
+    #         name: porkbun
+    #         key: secret-api-key
