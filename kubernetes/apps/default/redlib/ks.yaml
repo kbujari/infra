@@ -7,7 +7,7 @@ metadata:
 spec:
   targetNamespace: default
   dependsOn:
-    - name: nginx
+    - name: traefik
   sourceRef:
     kind: GitRepository
     name: netcluster

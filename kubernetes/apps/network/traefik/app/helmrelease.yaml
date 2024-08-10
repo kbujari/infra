@@ -32,7 +32,7 @@ spec:
     deployment:
       initContainers:
         - name: volume-permissions
-          image: busybox:latest
+          image: docker.io/busybox:latest
           command:
             ["sh", "-c", "touch /data/acme.json; chmod -v 600 /data/acme.json"]
           volumeMounts:

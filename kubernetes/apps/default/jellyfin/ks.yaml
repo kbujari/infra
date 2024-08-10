@@ -7,7 +7,7 @@ metadata:
 spec:
   targetNamespace: default
   dependsOn:
-    - name: nginx
+    - name: traefik
     - name: longhorn
   sourceRef:
     kind: GitRepository
