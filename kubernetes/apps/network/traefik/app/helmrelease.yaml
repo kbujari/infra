@@ -22,6 +22,8 @@ spec:
       strategy: rollback
       retries: 3
   values:
+    additionalArguments:
+      - "--certificatesresolvers.letsencrypt.acme.email=certs@4kb.net"
     ports:
       websecure:
         http3:
@@ -43,23 +45,23 @@ spec:
       fsGroupChangePolicy: "OnRootMismatch"
     persistence:
       enabled: true
-    # certResolvers:
-    #   letsencrypt:
-    #     dnsChallenge:
-    #       provider: porkbun
-    #     domain:
-    #       main: 4kb.net
-    #       sans:
-    #         - "*.4kb.net"
-    #     storage: /data/acme.json
-    # env:
-    #   - name: PORKBUN_API_KEY
-    #     valueFrom:
-    #       secretKeyRef:
-    #         name: porkbun
-    #         key: api-key
-    #   - name: PORKBUN_SECRET_API_KEY
-    #     valueFrom:
-    #       secretKeyRef:
-    #         name: porkbun
-    #         key: secret-api-key
+    certResolvers:
+      letsencrypt:
+        dnsChallenge:
+          provider: porkbun
+        domain:
+          main: 4kb.net
+          sans:
+            - "*.4kb.net"
+        storage: /data/acme.json
+    env:
+      - name: PORKBUN_API_KEY
+        valueFrom:
+          secretKeyRef:
+            name: porkbun
+            key: api-key
+      - name: PORKBUN_SECRET_API_KEY
+        valueFrom:
+          secretKeyRef:
+            name: porkbun
+            key: secret-api-key
