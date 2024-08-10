@@ -26,6 +26,8 @@ metadata:
   namespace: flux-system
 spec:
   targetNamespace: metallb-system
+  dependsOn:
+    - name: metallb
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
