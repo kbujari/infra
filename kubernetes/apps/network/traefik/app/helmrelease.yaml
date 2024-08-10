@@ -47,7 +47,7 @@ spec:
       letsencrypt:
         dnsChallenge:
           provider: porkbun
-        domain: &domains
+        domain:
           main: 4kb.net
           sans:
             - "*.4kb.net"
@@ -66,4 +66,5 @@ spec:
     tlsStore:
       defaultGeneratedCert:
         resolver: letsencrypt
-        domain: *domains
+        domain:
+          main: 4kb.net
