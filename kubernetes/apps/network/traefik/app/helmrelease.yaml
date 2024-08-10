@@ -63,8 +63,3 @@ spec:
           secretKeyRef:
             name: porkbun
             key: secret-api-key
-    tlsStore:
-      defaultGeneratedCert:
-        resolver: letsencrypt
-        domain:
-          main: 4kb.net
