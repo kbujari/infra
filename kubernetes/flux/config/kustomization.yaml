@@ -8,6 +8,6 @@ resources:
   - ./apps.yaml
   - ./repos/helm/longhorn.yaml
   - ./repos/helm/metallb.yaml
-  - ./repos/helm/nginx-ingress.yaml
+  - ./repos/helm/traefik.yaml
   - ./repos/helm/node-feature-discovery.yaml
   - ./repos/oci/capacitor.yaml
