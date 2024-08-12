@@ -56,7 +56,7 @@ spec:
       operator:
         clusterPoolIPv4PodCIDRList: 10.244.0.0/16
     ipv4NativeRoutingCIDR: 10.244.0.0/16
-    k8sServiceHost: localost
+    k8sServiceHost: localhost
     k8sServicePort: 7445
     kubeProxyReplacement: true
     l2announcements:
