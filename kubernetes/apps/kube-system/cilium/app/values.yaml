@@ -32,8 +32,6 @@ localRedirectPolicy: true
 k8sClientRateLimit:
   qps: 50
   burst: 200
-operator:
-  rollOutPods: true
 rollOutCiliumPods: true
 routingMode: native
 securityContext:
