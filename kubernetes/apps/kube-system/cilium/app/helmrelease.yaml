@@ -40,6 +40,17 @@ spec:
     enableRuntimeDeviceDetection: true
     endpointRoutes:
       enabled: true
+    hubble:
+      enabled: true
+      metrics:
+        enabled:
+          - dns:query
+          - drop
+          - tcp
+          - flow
+          - port-distribution
+          - icmp
+          - http
     ipam:
       mode: kubernetes
       operator:
