@@ -45,7 +45,9 @@ spec:
       ui:
         enabled: true
         rollOutPods: true
-        hosts: ["hubble.4kb.net"]
+        ingress:
+          enabled: true
+          hosts: ["hubble.4kb.net"]
       metrics:
         enabled:
           - dns:query
