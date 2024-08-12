@@ -8,7 +8,6 @@ spec:
   targetNamespace: default
   dependsOn:
     - name: traefik
-    - name: longhorn
   sourceRef:
     kind: GitRepository
     name: netcluster
