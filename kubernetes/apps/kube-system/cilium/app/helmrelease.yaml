@@ -1,0 +1,79 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: node-feature-discovery
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: cilium
+      version: 1.16.0
+      sourceRef:
+        kind: HelmRepository
+        name: cilium
+        namespace: flux-system
+  install:
+    crds: CreateReplace
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    crds: CreateReplace
+    remediation:
+      strategy: rollback
+      retries: 3
+  values:
+    autoDirectNodeRoutes: true
+    bandwidthManager:
+      enabled: true
+      bbr: true
+    bpf:
+      masquerade: true
+      tproxy: true
+    cgroup:
+      automount:
+        enabled: false
+      hostroot: /sys/fs/cgroup
+    cni:
+      exclusive: true
+    enableRuntimeDeviceDetection: true
+    endpointRoutes:
+      enabled: true
+    ipam:
+      mode: kubernetes
+      operator:
+        clusterPoolIPv4PodCIDRList: 10.244.0.0/16
+    ipv4NativeRoutingCIDR: 10.244.0.0/16
+    k8sServiceHost: localost
+    k8sServicePort: 7445
+    kubeProxyReplacement: true
+    l2announcements:
+      enabled: true
+    loadBalancer:
+      algorithm: maglev
+      mode: dsr
+    localRedirectPolicy: true
+    k8sClientRateLimit:
+      qps: 50
+      burst: 200
+    rollOutCiliumPods: true
+    routingMode: native
+    securityContext:
+      capabilities:
+        ciliumAgent:
+          - CHOWN
+          - KILL
+          - NET_ADMIN
+          - NET_RAW
+          - IPC_LOCK
+          - SYS_ADMIN
+          - SYS_RESOURCE
+          - DAC_OVERRIDE
+          - FOWNER
+          - SETGID
+          - SETUID
+        cleanCiliumState:
+          - NET_ADMIN
+          - SYS_ADMIN
+          - SYS_RESOURCE

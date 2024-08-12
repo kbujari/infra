@@ -6,8 +6,8 @@ resources:
   - ./flux.yaml
   - ./cluster.yaml
   - ./apps.yaml
+  - ./repos/helm/cilium.yaml
   - ./repos/helm/longhorn.yaml
-  - ./repos/helm/metallb.yaml
-  - ./repos/helm/traefik.yaml
   - ./repos/helm/node-feature-discovery.yaml
+  - ./repos/helm/traefik.yaml
   - ./repos/oci/capacitor.yaml
