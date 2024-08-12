@@ -42,6 +42,10 @@ spec:
       enabled: true
     hubble:
       enabled: true
+      ui:
+        enabled: true
+        rollOutPods: true
+        hosts: ["hubble.4kb.net"]
       metrics:
         enabled:
           - dns:query
