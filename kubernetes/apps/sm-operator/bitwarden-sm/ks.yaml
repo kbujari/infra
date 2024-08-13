@@ -9,7 +9,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/secret/bitwarden-sm/app
+  path: ./kubernetes/apps/sm-operator/bitwarden-sm/app
   prune: true
   sourceRef:
     kind: GitRepository
