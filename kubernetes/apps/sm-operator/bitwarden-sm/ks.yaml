@@ -5,7 +5,7 @@ metadata:
   name: &app bitwarden-sm
   namespace: flux-system
 spec:
-  targetNamespace: secret
+  targetNamespace: sm-operator
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
