@@ -8,3 +8,4 @@ resources:
   - ./apps.yaml
   - ./repos/helm
   - ./repos/oci
+  - ./repos/git
