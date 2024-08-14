@@ -8,4 +8,4 @@ spec:
   url: https://github.com/rancher/local-path-provisioner.git
   interval: 30m
   ref:
-    branch: v0.0.26
+    tag: v0.0.28
