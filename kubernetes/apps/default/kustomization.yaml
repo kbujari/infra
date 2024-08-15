@@ -4,4 +4,3 @@ resources:
   - ./ns.yaml
   - ./jellyfin/ks.yaml
   - ./redlib/ks.yaml
-  - ./minecraft/ks.yaml
