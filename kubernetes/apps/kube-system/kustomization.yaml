@@ -4,3 +4,4 @@ resources:
   - ./ns.yaml
   - ./cilium/ks.yaml
   - ./node-feature-discovery/ks.yaml
+  - ./spegel/ks.yaml
