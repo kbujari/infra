@@ -14,12 +14,10 @@ spec:
         name: cilium
         namespace: flux-system
   install:
-    crds: CreateReplace
     remediation:
       retries: 3
   upgrade:
     cleanupOnFail: true
-    crds: CreateReplace
     remediation:
       strategy: rollback
       retries: 3
@@ -27,20 +25,6 @@ spec:
     - kind: ConfigMap
       name: cilium-helm-values
   values:
-    operator:
-      prometheus:
-        enabled: true
-        serviceMonitor:
-          enabled: true
-      dashboards:
-        enabled: true
-    prometheus:
-      enabled: true
-      serviceMonitor:
-        enabled: true
-        trustCRDsExist: true
-    dashboards:
-      enabled: true
     hubble:
       enabled: true
       relay:
@@ -68,3 +52,17 @@ spec:
           enabled: true
         dashboards:
           enabled: true
+    operator:
+      prometheus:
+        enabled: true
+        serviceMonitor:
+          enabled: true
+      dashboards:
+        enabled: true
+    prometheus:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+        trustCRDsExist: true
+    dashboards:
+      enabled: true
