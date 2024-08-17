@@ -27,11 +27,28 @@ spec:
     - kind: ConfigMap
       name: cilium-helm-values
   values:
+    operator:
+      prometheus:
+        enabled: true
+        serviceMonitor:
+          enabled: true
+      dashboards:
+        enabled: true
+    prometheus:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+        trustCRDsExist: true
+    dashboards:
+      enabled: true
     hubble:
       enabled: true
       relay:
         enabled: true
         rollOutPods: true
+        prometheus:
+          serviceMonitor:
+            enabled: true
       ui:
         enabled: true
         rollOutPods: true
@@ -47,3 +64,7 @@ spec:
           - port-distribution
           - icmp
           - http
+        serviceMonitor:
+          enabled: true
+        dashboards:
+          enabled: true
