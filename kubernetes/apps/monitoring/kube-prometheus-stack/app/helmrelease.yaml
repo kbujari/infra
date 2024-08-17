@@ -82,13 +82,13 @@ spec:
           - new-service-discovery-manager
         retention: 14d
         retentionSize: 70GB
-        resources:
-          requests:
-            cpu: 100m
-          limits:
-            memory: 1500Mi
-        storageSpec:
-          volumeClaimTemplate:
+        # resources:
+        #   requests:
+        #     cpu: 100m
+        #   limits:
+        #     memory: 1500Mi
+        # storageSpec:
+        #   volumeClaimTemplate:
             # spec:
             #   storageClassName: openebs-hostpath
             #   resources:
