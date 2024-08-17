@@ -4,9 +4,10 @@ kind: Kustomization
 
 resources:
   - ./bitwarden.yaml
-  - ./spegel.yaml
   - ./cilium.yaml
+  - ./grafana.yaml
   - ./longhorn.yaml
   - ./node-feature-discovery.yaml
   - ./prometheus-community.yaml
+  - ./spegel.yaml
   - ./traefik.yaml

@@ -1,5 +1,24 @@
 CONTROLIP = 192.168.2.121
 
+helm-bootstrap:
+	@helm install prometheus-operator-crds \
+		oci://ghcr.io/prometheus-community/charts/prometheus-operator-crds \
+		--create-namespace \
+		--namespace monitoring \
+		--version 13.0.2
+
+	@helm install cilium \
+		cilium/cilium \
+		--namespace kube-system \
+		--version 1.16.0 \
+		--values kubernetes/apps/kube-system/cilium/app/values.yaml
+
+	@helm install spegel \
+	 	oci://ghcr.io/spegel-org/helm-charts/spegel \
+		--namespace kube-system \
+		--version v0.0.23 \
+		--values kubernetes/apps/kube-system/spegel/app/values.yaml
+
 talos-gen:
 	@talosctl gen config kube https://${CONTROLIP}:6443 \
 		--config-patch-control-plane @kubernetes/talos/common.yaml \
@@ -32,14 +51,6 @@ talos-reset:
 flux-bootstrap:
 	@kubectl apply --server-side --kustomize kubernetes/flux/bootstrap
 	@kubectl apply --server-side --kustomize kubernetes/flux/config
-
-cilium-bootstrap:
-	@helm install \
-		cilium \
-		cilium/cilium \
-		--version 1.16.0 \
-		--namespace kube-system \
-		--values kubernetes/apps/kube-system/cilium/app/values.yaml
 
 clean:
 	@rm -f controlplane.yaml worker.yaml talosconfig
