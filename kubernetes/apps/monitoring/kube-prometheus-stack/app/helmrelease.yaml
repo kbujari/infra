@@ -82,18 +82,18 @@ spec:
           - new-service-discovery-manager
         retention: 14d
         retentionSize: 70GB
-        # resources:
-        #   requests:
-        #     cpu: 100m
-        #   limits:
-        #     memory: 1500Mi
-        # storageSpec:
-        #   volumeClaimTemplate:
-            # spec:
-            #   storageClassName: openebs-hostpath
-            #   resources:
-            #     requests:
-            #       storage: 75Gi
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            memory: 1500Mi
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: local-path
+              resources:
+                requests:
+                  storage: 16Gi
     prometheus-node-exporter:
       fullnameOverride: node-exporter
       prometheus:
