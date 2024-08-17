@@ -27,18 +27,6 @@ spec:
   values:
     hubble:
       enabled: true
-      relay:
-        enabled: true
-        rollOutPods: true
-        prometheus:
-          serviceMonitor:
-            enabled: true
-      ui:
-        enabled: true
-        rollOutPods: true
-        ingress:
-          enabled: true
-          hosts: ["hubble.4kb.net"]
       metrics:
         enabled:
           - dns:query
@@ -52,6 +40,18 @@ spec:
           enabled: true
         dashboards:
           enabled: true
+      relay:
+        enabled: true
+        rollOutPods: true
+        prometheus:
+          serviceMonitor:
+            enabled: true
+      ui:
+        enabled: true
+        rollOutPods: true
+        ingress:
+          enabled: true
+          hosts: ["hubble.4kb.net"]
     operator:
       prometheus:
         enabled: true
